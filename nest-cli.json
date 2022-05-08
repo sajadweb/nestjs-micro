@@ -1,37 +1,45 @@
 {
   "collection": "@nestjs/schematics",
-  "sourceRoot": "src/api",
+  "sourceRoot": "apps/api/src",
   "monorepo": true,
-  "root": "src/api",
+  "root": "apps/api",
   "entryFile": "api/src/main",
   "projects": {
     "api": {
       "type": "application",
-      "root": "src/api",
+      "root": "apps/api",
       "entryFile": "main",
-      "sourceRoot": "src/api/src",
+      "sourceRoot": "apps/api/src",
       "compilerOptions": {
-        "tsConfigPath": "src/api/tsconfig.app.json"
+        "tsConfigPath": "apps/api/tsconfig.app.json"
+      }
+    },
+    "mqtt": {
+      "type": "application",
+      "root": "apps/mqtt",
+      "entryFile": "main",
+      "sourceRoot": "apps/mqtt/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/mqtt/tsconfig.app.json"
       }
     },
     "grpc": {
       "type": "application",
-      "root": "src/grpc",
-      "entryFile": "grpc/src/main",
-      "sourceRoot": "src/grpc/src",
+      "root": "apps/grpc",
+      "entryFile": "main",
+      "sourceRoot": "apps/grpc/src",
       "compilerOptions": {
-        "tsConfigPath": "src/grpc/tsconfig.app.json"
+        "tsConfigPath": "apps/grpc/tsconfig.app.json"
       }
     },
     "graphql": {
       "type": "application",
-      "root": "src/graphql",
-      "entryFile": "graphql/src/main",
-      "sourceRoot": "src/graphql/src",
+      "root": "apps/graphql",
+      "entryFile": "main",
+      "sourceRoot": "apps/graphql/src",
       "compilerOptions": {
-        "tsConfigPath": "src/graphql/tsconfig.app.json"
+        "tsConfigPath": "apps/graphql/tsconfig.app.json"
       }
     }
-
   }
 }
