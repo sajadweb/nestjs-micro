@@ -1,5 +1,37 @@
 {
-  "$schema": "https://json.schemastore.org/nest-cli",
   "collection": "@nestjs/schematics",
-  "sourceRoot": "src"
+  "sourceRoot": "src/api",
+  "monorepo": true,
+  "root": "src/api",
+  "entryFile": "api/src/main",
+  "projects": {
+    "api": {
+      "type": "application",
+      "root": "src/api",
+      "entryFile": "main",
+      "sourceRoot": "src/api/src",
+      "compilerOptions": {
+        "tsConfigPath": "src/api/tsconfig.app.json"
+      }
+    },
+    "grpc": {
+      "type": "application",
+      "root": "src/grpc",
+      "entryFile": "grpc/src/main",
+      "sourceRoot": "src/grpc/src",
+      "compilerOptions": {
+        "tsConfigPath": "src/grpc/tsconfig.app.json"
+      }
+    },
+    "graphql": {
+      "type": "application",
+      "root": "src/graphql",
+      "entryFile": "graphql/src/main",
+      "sourceRoot": "src/graphql/src",
+      "compilerOptions": {
+        "tsConfigPath": "src/graphql/tsconfig.app.json"
+      }
+    }
+
+  }
 }

@@ -1,0 +1,12 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "watchAssets": true,
+    "declaration": false,
+    "baseUrl": "./",
+    "outDir": "../../dist",
+    "paths": {}
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist", "test", "**/*spec.ts"]
+}
