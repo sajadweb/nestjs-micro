@@ -10,6 +10,7 @@
     "build": "nest build",
     "format": "prettier --write \"apps/**/*.ts\" \"libs/**/*.ts\"",
     "start": "nest start",
+    "start:api:dev": "nest start api --watch",
     "start:graphql:dev": "nest start graphql --watch",
     "start:grpc:dev": "nest start grpc --watch",
     "start:mqtt:dev": "nest start mqtt --watch",
@@ -24,10 +25,14 @@
     "test:e2e": "jest --config ./apps/micro-nest/test/jest-e2e.json"
   },
   "dependencies": {
+    "@nestjs/apollo": "^10.0.11",
     "@nestjs/common": "^8.0.0",
     "@nestjs/config": "^2.0.0",
     "@nestjs/core": "^8.0.0",
+    "@nestjs/graphql": "^10.0.11",
     "@nestjs/platform-express": "^8.0.0",
+    "apollo-server-express": "^3.7.0",
+    "graphql": "^16.4.0",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^7.2.0"
@@ -72,7 +77,12 @@
     "coverageDirectory": "../coverage",
     "testEnvironment": "node",
     "roots": [
-      "<rootDir>/apps/"
-    ]
+      "<rootDir>/apps/",
+      "<rootDir>/libs/"
+    ],
+    "moduleNameMapper": {
+      "@libs/common/(.*)": "<rootDir>/libs/common/src/$1",
+      "@libs/common": "<rootDir>/libs/common/src"
+    }
   }
 }

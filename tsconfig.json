@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
     "module": "commonjs",
-    "skipLibCheck": true,
     "declaration": true,
     "removeComments": true,
     "emitDecoratorMetadata": true,
@@ -10,11 +9,20 @@
     "target": "es2017",
     "sourceMap": true,
     "outDir": "./dist",
-    "baseUrl": ".",
+    "baseUrl": "./",
     "incremental": true,
-    "paths": {}
+    "skipLibCheck": true,
+    "paths": {
+      "@libs/common": [
+        "libs/common/src"
+      ],
+      "@libs/common/*": [
+        "libs/common/src/*"
+      ]
+    }
   },
   "include": [
-    "apps/**/*"
+    "apps/**/*",
+    "libs/**/*"
   ]
 }

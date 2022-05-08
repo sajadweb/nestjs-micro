@@ -2,7 +2,11 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "declaration": false,
-    "outDir": "../../dist/apps/api"
+    "outDir": "../../dist/apps/api",
+    "paths": {
+      "@libs/common": ["../../libs/common/src"],
+      "@libs/common/*": ["../../libs/common/src/*"]
+    }
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "dist", "test", "**/*spec.ts"]

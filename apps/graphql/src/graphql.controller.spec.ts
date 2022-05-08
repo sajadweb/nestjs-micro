@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { GraphqlController } from './graphql.controller';
+import { GraphqlController } from './graphql.resolver';
 import { GraphqlService } from './graphql.service';
 
 describe('GraphqlController', () => {
